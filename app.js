@@ -30,8 +30,7 @@ app.use('/admin',adminData.routes); // ** ** {localhost:3000/admin/home  ,localh
 
 app.use(error404Controller.get404);
 // app.listen();  // online
-const port=process.env.port ;
-console.log(port);
-
-  app.listen(port);
- 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+}); 
