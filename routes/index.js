@@ -9,14 +9,17 @@ const routerindex=express.Router();
 routerindex.get('/home',function (request,response,next){ 
     //response.setHeader('Content-Type','text/html charset=utf-8');
     //const product=adminData.products;
-    response.render('index'/*name of file*/);    
+    response.render('index'/*name of file*/,{ csrfToken: request.csrfToken() });    
      
     });
     routerindex.get('/',function (request,response,next){ 
         //response.setHeader('Content-Type','text/html charset=utf-8');
         //const product=adminData.products;
-        response.render('index'/*name of file*/);    
-         
+        if(request.session.loggedin==true){
+        response.render('index'/*name of file*/,{ csrfToken: request.csrfToken() });    
+        }else{
+            response.redirect("/");
+        }
         });
 
     module.exports=routerindex;

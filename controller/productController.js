@@ -4,12 +4,14 @@ function  (request,response,next)
 */ 
 //const products=[];
 const Product=require('../model/product');
+ 
 
 exports.addProducts= (request,response,next)=>{ 
     //response.setHeader('Content-Type','text/html charset=utf-8');
     //response.sendFile(path.join(rootDire,'views','add-product.html'));
  
     response.render('add-product',{
+
         pageTitle:'add product',
         path:'/admin/add-product',
         formsCSS:true,
@@ -19,12 +21,13 @@ exports.addProducts= (request,response,next)=>{
     };
 
     exports.index= function(request,response,next){ 
- 
+      
         response.render('index'/*name of file in folder views*/,
         {
             pageTitle:'HomePage',
+            username:request.session.username,
         });    
-         
+           
         };
 
         exports.addpostproduct= (request,response,next)=>{ 

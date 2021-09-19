@@ -1,0 +1,70 @@
+
+
+                    <div class="row">
+                        <div class="col-md-9" ">
+                            <form id="validate2" method="POST"  action="addItem">
+                            <div class="block">               
+                                <div class="block-content">
+                                    <h2><strong></strong> Add ITem</h2>
+                                    <p>Add item page and can update or delete item in the lower half </p>
+                                    
+                                    <div class="form-group">
+                                        <label>Title:</label>                                        
+                                        <input type="text" class="form-control" name="title"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <label>Decscription:</label>                                        
+                                        <input type="text" class="form-control" name="Decscription" id="Decscription"/>                                        
+                                    </div>                    
+                                                   
+                                    <div class="form-group">                                        
+                                        <label>amount:</label>                                        
+                                        <input type="text" class="form-control" name="amount"/>                                        
+                                    </div>
+                                    
+                                                                                                    
+                                    
+                                </div>
+                                <div class="block-footer">
+                                    <div class="pull-left">
+                                        <button class="btn btn-default" type="button" onClick="validate2.resetForm();">Hide prompts</button>
+                                    </div>                                    
+                                    <div class="pull-right">                                                                                    
+                                        <button class="btn btn-success" type="submit">Submit</button>                                        
+                                    </div>
+                                </div>                                    
+                            </div>
+                            </form>
+                            <script type="text/javascript">
+                                var validate2 = $("#validate2").validate({
+                                    rules: {                                            
+                                            title: {
+                                                    required: true,
+                                                    minlength: 2,
+                                                    maxlength: 28
+                                            },
+                                            Decscription: {
+                                                    required: true,
+                                                    minlength: 5,
+                                                    maxlength: 2000
+                                            },
+                                            
+                                            amount: {
+                                                    required: true,
+                                                    min: 0, 
+                                            },
+                                            rules: "required"
+                                        },                                        
+                                        errorPlacement: function(error, element) {
+                                            if (element.attr("name") == "gender" || element.attr("name") == "rules" ) {                                                
+                                                element.parents(".form-group").append(error);                                                
+                                            }else
+                                                error.insertAfter(element);                                            
+                                        }
+                                });                                
+                            </script>                            
+                        </div>
+                        
+                        
+                    </div>

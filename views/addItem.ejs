@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <title>Gemini-<%=pageTitle%></title>    
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link href="../css/styles.css" rel="stylesheet" type="text/css" />        
+        <!--[if lt IE 10]><link rel="stylesheet" type="text/css" href="css/ie.css"/><![endif]-->
+        
+        <script type="text/javascript" src="../js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>        
+        
+        <script type="text/javascript" src="../js/plugins/sparkline/jquery.sparkline.min.js"></script>        
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        <script type="text/javascript" src="../js/plugins/fancybox/jquery.fancybox.pack.js"></script>                
+
+        <script type="text/javascript" src="../js/plugins/rickshaw/d3.v3.js"></script>
+        <script type="text/javascript" src="../js/plugins/rickshaw/rickshaw.min.js"></script>
+        
+        <script type='text/javascript' src='../js/plugins/knob/jquery.knob.js'></script>
+        
+        <script type="text/javascript" src="../js/plugins/daterangepicker/moment.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/daterangepicker/daterangepicker.js"></script> 
+        
+        <script type='text/javascript' src='../js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
+        <script type='text/javascript' src='../js/plugins/jvectormap/jquery-jvectormap-europe-mill-en.js'></script>
+        
+        <script type="text/javascript" src="../js/plugins.js"></script>        
+        <script type="text/javascript" src="../js/demo.js"></script>
+        <script type="text/javascript" src="../js/maps.js"></script>        
+        <script type="text/javascript" src="../js/charts.js"></script>
+        <script type="text/javascript" src="../js/actions.js"></script>        
+
+        <script type="text/javascript" src="../js/plugins/jquery-validation/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/jquery-validation/additional-methods.min.js"></script>
+
+        
+        <script type='text/javascript' src='../js/plugins/noty/jquery.noty.js'></script>
+        <script type='text/javascript' src='../js/plugins/noty/layouts/topCenter.js'></script>
+        <script type='text/javascript' src='../js/plugins/noty/layouts/topLeft.js'></script>
+        <script type='text/javascript' src='../js/plugins/noty/layouts/topRight.js'></script>    
+        <script type='text/javascript' src='../js/plugins/noty/themes/default.js'></script>
+ 
+        <script>
+                  $(document).ready(function(){
+            $('#submit').click(function() {
+            
+                setTimeout(function() {$('#modal-example-2').modal('hide');}, 1000);
+              
+                setTimeout(function() {location.reload();}, 1500);
+               
+           });
+           $('#submit_to_delete').click(function() {
+                   $("#delete_form").submit();
+                   setTimeout(function() {location.reload();}, 1500);
+              });
+        });
+           </script>
+        
+        <script type='text/javascript' >
+            $(document).ready(function(){
+
+                $( ".Mido" ).click(function() {
+                    
+                    var para1 = this.dataset['param1'];
+                    var para2 = this.dataset['param2'];
+                    var para3 = this.dataset['param3']; 
+ 
+                    $("#item_title").val(para2);
+                    $("#item_description").val(para3);
+                    $("#item_id").val(para1);
+                    
+             });
+        
+          
+           
+    });
+         
+        
+ 
+            
+         </script>
+     </head>
+    <body>
+        
+        <div class="page-container">
+            
+            
+        <%- include('../includes/page-head.ejs') %>
+<%- include('../includes/header.ejs') %>
+<%- include('../includes/navigation.ejs') %>
+       
+<div class="page-content">
+
+    <%- include('../includes/add-item.ejs') %>
+   
+</div>
+
+
+<div class="page-sidebar"></div>
+</div>
+
+
+
+
+</body>
+</html>
+
+ 

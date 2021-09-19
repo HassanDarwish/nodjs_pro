@@ -8,6 +8,7 @@ module.exports=class product{
 
     constructor(t){
         this.title=t;
+    
     }
 
     save(){
@@ -16,6 +17,7 @@ module.exports=class product{
             'data',
             'products.json'
             );
+            
             console.log(p)
         //products.push(this);
     fs.readFile(p,(error,content)=>{

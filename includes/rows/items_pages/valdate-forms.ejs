@@ -1,0 +1,129 @@
+
+
+                    <div class="row">
+                        <div class="col-md-9" ">
+                            <form id="validate2" method="POST" action="javascript:alert('Form #validate2 submited');">
+                            <div class="block">               
+                                <div class="block-content">
+                                    <h2><strong>jQuery</strong> Validation</h2>
+                                    <p>This jQuery plugin makes simple clientside form validation easy, whilst still offering plenty of customization options. It makes a good choice if you’re building something new from scratch, but also when you’re trying to integrate something into an existing application with lots of existing markup.</p>
+                                    
+                                    <div class="form-group">
+                                        <label>Login:</label>                                        
+                                        <input type="text" class="form-control" name="login"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password:</label>                                        
+                                        <input type="password" class="form-control" name="password" id="password2"/>                                        
+                                    </div>                    
+                                    <div class="form-group">
+                                        <label>Confirm Password:</label>                                       
+                                        <input type="password" class="form-control" name="re-password"/>
+                                    </div>               
+                                    <div class="form-group">
+                                        <label>E-mail:</label>
+                                        <input type="text" value="" name="email" class="form-control"/>                                        
+                                    </div>
+                                    <div class="form-group">                                        
+                                        <label>Age:</label>                                        
+                                        <input type="text" class="form-control" name="age"/>                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Gender:</label>             
+                                        <div class="radio radio-inline">
+                                            <label>
+                                                <input type="radio" name="gender" value="1"/> Male
+                                            </label>
+                                        </div>                                    
+                                        <div class="radio radio-inline">
+                                            <label>
+                                                <input type="radio" name="gender" value="0"/> Famale
+                                            </label>
+                                        </div>                                              
+                                    </div>
+                                    <div class="form-group">                                        
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="" name="rules"> Please send me news
+                                            </label>
+                                        </div>                                                                        
+                                    </div>                                    
+                                    <div class="form-group">
+                                        <label>Date of birth:</label>                                        
+                                        <input type="text" class="form-control datepicker" name="date"/>                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Credit card:</label>                                        
+                                        <input type="text" class="form-control" name="credit"/>                                        
+                                    </div>             
+                                    <div class="form-group">
+                                        <label>Site:</label>
+                                        <input type="text" value="http://" name="site" class="form-control"/>                                        
+                                    </div>                                                                  
+                                    
+                                </div>
+                                <div class="block-footer">
+                                    <div class="pull-left">
+                                        <button class="btn btn-default" type="button" onClick="validate2.resetForm();">Hide prompts</button>
+                                    </div>                                    
+                                    <div class="pull-right">                                                                                    
+                                        <button class="btn btn-success" type="submit">Submit</button>                                        
+                                    </div>
+                                </div>                                    
+                            </div>
+                            </form>
+                            <script type="text/javascript">
+                                var validate2 = $("#validate2").validate({
+                                    rules: {                                            
+                                            login: {
+                                                    required: true,
+                                                    minlength: 2,
+                                                    maxlength: 8
+                                            },
+                                            password: {
+                                                    required: true,
+                                                    minlength: 5,
+                                                    maxlength: 10
+                                            },
+                                            're-password': {
+                                                    required: true,
+                                                    minlength: 5,
+                                                    maxlength: 10,
+                                                    equalTo: "#password2"
+                                            },
+                                            age: {
+                                                    required: true,
+                                                    min: 18,
+                                                    max: 100
+                                            },
+                                            email: {
+                                                    required: true,
+                                                    email: true
+                                            },
+                                            date: {
+                                                    required: true,
+                                                    date: true
+                                            },
+                                            credit: {
+                                                    required: true,
+                                                    creditcard: true
+                                            },
+                                            site: {
+                                                    required: true,
+                                                    url: true
+                                            },
+                                            gender: "required",
+                                            rules: "required"
+                                        },                                        
+                                        errorPlacement: function(error, element) {
+                                            if (element.attr("name") == "gender" || element.attr("name") == "rules" ) {                                                
+                                                element.parents(".form-group").append(error);                                                
+                                            }else
+                                                error.insertAfter(element);                                            
+                                        }
+                                });                                
+                            </script>                            
+                        </div>
+                        
+                        
+                    </div>

@@ -10,7 +10,7 @@
         <div class="profile">                    
             <img src="img/samples/users/user-30.jpg"/>
             <div class="profile-info">
-                <a href="#" class="profile-title">Howdy, John Doe</a>
+                <a href="#" class="profile-title"><%=username%>  </a>
                 <span class="profile-subtitle">Administrator</span>
                 <div class="profile-buttons">
                     <div class="btn-group">                                
@@ -22,7 +22,7 @@
                             <li><a href="#">Changelog</a></li>
                             <li><a href="#">Settings</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="/admin/logout">Logout</a></li>
                         </ul>
                     </div>
                 </div>                        
@@ -41,22 +41,10 @@
                     <li><a href="form-files.html">File Handling </a></li>
                 </ul>
             </li>                    
-            <li><a href="#"><i class="fa fa-cogs"></i> UI Elements</a>
+            <li><a href="#"><i class="fa fa-cogs"></i> Item</a>
                 <ul>
-                    <li><a href="ui-widgets.html">Widgets</a></li>
-                    <li><a href="ui-buttons.html">Buttons</a></li>
-                    <li><a href="ui-slider-progress.html">Slider & Progress</a></li>
-                    <li><a href="ui-modals.html">Modals & Popups</a></li>
-                    <li><a href="ui-tabs.html">Tabs & Accordion</a></li>
-                    <li><a href="ui-lists.html">Lists</a></li>
-                    <li><a href="ui-blocks-panels.html">Blocks & Panels</a></li>
-                    <li><a href="ui-icons.html">Icons</a></li>
-                    <li><a href="ui-typography.html">Typography</a></li>
-                    <li><a href="ui-grid.html">Grid</a></li>
-                    <li><a href="ui-nestable.html">Nestable List</a></li>
-                    <li><a href="ui-calendar.html">Calendar</a></li>
-                    <li><a href="ui-portlet.html">Portlet</a></li>
-                    <li><a href="ui-ajax.html">Ajax Content<span class="label label-danger">beta</span></a></li>
+                    <li><a href="addItem">add Item</a></li>
+                     
                 </ul>
             </li> 
             <li><a href="#"><i class="fa fa-table"></i> Tables</a>
